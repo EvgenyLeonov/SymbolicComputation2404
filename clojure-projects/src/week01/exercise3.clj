@@ -1,35 +1,33 @@
 (ns week01.exercise3
   (:require [clojure.string :as string]))
 
-(println "1." (= "Cool right?" (str __)))
+(println "1." (= "Cool right?" (str "Cool right?")))
 
-(println "2." (= __ (= "hello" :hello 'hello)))
+(println "2." (= false (= "hello" :hello 'hello)))
 
-(println "3." (= :hello (keyword __)))
+(println "3." (= :hello (keyword "hello")))
 
-(println "4." (= 'hello (symbol __)))
+(println "4." (= 'hello (symbol "hello")))
 
-(println "5." (= __ (count "Hello World")))
+(println "5." (= 11 (count "Hello World")))
 
-(println "6." (= __ (string/join '(1 2 3))))
+(println "6." (= "123" (string/join '(1 2 3))))
 
-(println "7." (= "1, 2, 3" (string/join __ '(1 2 3))))
+(println "7." (= "1, 2, 3" (string/join ", " '(1 2 3))))
 
-(println "8." (= __ (char? \c)))
+(println "8." (= true (char? \c)))
 
-(println "9." (= __ (char? "a")))
+(println "9." (= false (char? "a")))
 
-(println "10." (= __ (string? \b)))
+(println "10." (= false (string? \b)))
 
-(println "11." (= __ (string? "")))
+(println "11." (= true (string? "")))
 
-(println "12." (= __ (string/blank? "")))
+(println "12." (= true (string/blank? "")))
 
-(println "13." (= __ (string/blank? " \n \t  ")))
+(println "13." (= true (string/blank? " \n \t  ")))
 
-(println "14." (= __ (string/blank? " \n \t  ")))
-
-(println "15." (= __ (or (= 2 2) (not true))))
+(println "14." (= true (or (= 2 2) (not true))))
 
 
 
