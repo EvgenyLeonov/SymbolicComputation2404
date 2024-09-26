@@ -1,14 +1,14 @@
 (ns week01.exercise2)
 
-(println "1." (= __ nil))
+(println "1." (= nil nil))
 
-(println "2." (= __ (not (= 1 nil))))
+(println "2." (= true (not (= 1 nil))))
 
-(println "3." (= __ "hello"))
+(println "3." (= "hello" "hello"))
 
-(println "4." (= __ (str 'world)))
+(println "4." (= "world" (str 'world)))
 
-(println "5." (= __ (= \c "c")))
+(println "5." (= false (= \c "c")))
 
 
 
