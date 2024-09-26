@@ -1,4 +1,4 @@
-(ns clojure-projects.week1.exercise2)
+(ns week01.exercise2)
 
 (println "1." (= __ nil))
 
