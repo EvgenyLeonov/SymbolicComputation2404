@@ -9,10 +9,15 @@
 
 (println "4." (= 'hello (symbol "hello")))
 
+; strings also collections. You may think about them as about a collection of strings
+; each of these strings in collection contains one letter: "h", "e" ...
 (println "5." (= 11 (count "Hello World")))
 
+; '(1 2 3) is suppressed by ' symbol. string/join executes it (literally, calculates)
 (println "6." (= "123" (string/join '(1 2 3))))
 
+; you may use this pattern to convert some collection to string with delimiters
+; without any loops
 (println "7." (= "1, 2, 3" (string/join ", " '(1 2 3))))
 
 (println "8." (= true (char? \c)))

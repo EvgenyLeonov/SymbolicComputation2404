@@ -8,6 +8,8 @@
 
 (println "4." (= "world" (str 'world)))
 
+; char and strings are different types
+; pay attention what exactly your function returns
 (println "5." (= false (= \c "c")))
 
 
