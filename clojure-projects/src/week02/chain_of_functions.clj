@@ -1,6 +1,5 @@
 (ns week02.chain-of-functions)
 
-; single-order function
 (defn mult [a b]
   (* a b)
   )

@@ -1,18 +1,15 @@
 (ns week02.borsch)
 
-; single-order function
 (defn boil
   [ingredient_name]
   (println ingredient_name "is boiled")
   )
 
-; single-order function
 (defn fry
   [ingredient_name]
   (println ingredient_name "is fried")
   )
 
-; single-order function
 (defn borsch []
   (println "Borsch!")
   (boil "beets")
