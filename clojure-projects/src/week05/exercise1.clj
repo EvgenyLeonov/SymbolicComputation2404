@@ -23,6 +23,17 @@
       )
     )
   )
+; just for illustration purposes
+(defn reverse_collection_explicit_recursion
+  [vct]
+  (let [vct_res (vector (last vct))
+        rest_of_vct_size (dec (count vct))]
+    (if (= 0 rest_of_vct_size)
+      vct_res
+      (concat vct_res (reverse_collection_explicit_recursion (take rest_of_vct_size vct)))
+      )
+    )
+  )
 
 ; (println "recursive-reverse =" (recursive-reverse [1 2 3]))
 
