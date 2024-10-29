@@ -2,7 +2,7 @@
 
 (defrecord Node [name next_node])
 
-; node1 -- head
+; node0 -- head
 ; node6 -- tail
 
 (defn create_linked_list []
@@ -11,7 +11,8 @@
         node4 (Node. "4" node5)
         node3 (Node. "3" node4)
         node2 (Node. "2" node3)
-        node1 (Node. "1" node2)]
-    node1
+        node1 (Node. "1" node2)
+        node0 (Node. "0" node1)]
+    node0
     )
   )
