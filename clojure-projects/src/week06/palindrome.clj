@@ -1,8 +1,8 @@
 (ns week06.palindrome
-  (:require [clojure.string :as str])
+  (:require [clojure.string])
   )
 
-; abccba
+; try this word: abccba
 (def my_word (clojure.string/lower-case "kayak"))
 
 (defn palindrome?_reverse [word]
