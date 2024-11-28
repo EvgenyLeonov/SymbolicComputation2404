@@ -67,7 +67,7 @@
         edges_from_this_node (get_edges_for_node node_id all_edges)
         children_to_go (filter_children_by_history node_id edges_from_this_node history_updated)
         ]
-    (println "node_id =" node_id "; history_updated =" history_updated)
+    ;(println "node_id =" node_id "; history_updated =" history_updated)
     (if (= node_id target_node_id)
       (swap! routes conj history_updated)
       ; child is Edge
@@ -162,11 +162,26 @@
         (println "Hour" (inc hour))
         (println "--------------")
         (println (get_cities_population current_nodes))
-        (let [cities_and_passengers (map #(analyze_city % spaceport_node_id current_nodes current_edges) current_nodes)]
+        (let [cities_and_passengers (map #(analyze_city % spaceport_node_id current_nodes current_edges) current_nodes)
+              city_of_choice_metadata (last (sort-by last (filter #(some? %) cities_and_passengers)))
+              city_of_choice (first city_of_choice_metadata)
+              city_of_choice_id (:id city_of_choice)
+              city_of_choice_name (:name city_of_choice)
+              city_of_choice_population (:population city_of_choice)
 
-          )
+              passengers_to_go (last city_of_choice_metadata)
 
-        (recur (inc hour) current_nodes current_edges)
+              spaceport_node (get_node_by_id spaceport_node_id current_nodes)
+              spaceport_node_name (:name spaceport_node)
+              spaceport_node_population (:population spaceport_node)
+
+              updated_nodes (conj
+                              (vec (filter #(and (not= (:id %) spaceport_node_id) (not= (:id %) city_of_choice_id)) current_nodes))
+                              (Node. city_of_choice_id city_of_choice_name (- city_of_choice_population passengers_to_go))
+                              (Node. spaceport_node_id spaceport_node_name (+ spaceport_node_population passengers_to_go))
+                              )]
+          (println "city of choice =" city_of_choice_name)
+          (recur (inc hour) updated_nodes current_edges))
         )
       (do
         (println "--------------")
@@ -174,16 +189,14 @@
         (println "Finally evacuated" (:population (get_node_by_id spaceport_node_id all_nodes) "passengers"))
         )
       )
-
     )
-
   )
 
 (def spaceport_node_id 4)
-; (evacuation all_nodes edges_by_hours spaceport_node_id)
+(evacuation all_nodes edges_by_hours spaceport_node_id)
 
 
 ; DEBUG
 ;(println (find_all_routes 1 spaceport_node_id all_nodes (get edges_by_hours 1)))
-(find_all_routes 1 spaceport_node_id all_nodes (get edges_by_hours 1))
+;(find_all_routes 1 spaceport_node_id all_nodes (get edges_by_hours 1))
 
