@@ -153,11 +153,9 @@
 
 (defn evacuation [all_nodes all_edges spaceport_node_id]
   (loop [hour 0
-         current_nodes all_nodes
-         current_edges (get all_edges hour)]
+         current_nodes all_nodes]
     (if (<= hour 2)
-      ; TODO remove current_edges from loop => use local let
-      (do
+      (let [current_edges (get all_edges hour)]
         (println "--------------")
         (println "Hour" (inc hour))
         (println "--------------")
@@ -181,7 +179,7 @@
                               (Node. spaceport_node_id spaceport_node_name (+ spaceport_node_population passengers_to_go))
                               )]
           (println "city of choice =" city_of_choice_name)
-          (recur (inc hour) updated_nodes current_edges))
+          (recur (inc hour) updated_nodes))
         )
       (do
         (println "--------------")
