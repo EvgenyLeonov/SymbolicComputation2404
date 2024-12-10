@@ -23,17 +23,17 @@
 
 (defmethod multimethod-with-args :path-three [_])
 
-(println "1."  (= __
+(println "1."  (= "Hello, World!"
                   (multimethod-without-args :first)))
 
-(println "2."  (= __
+(println "2."  (= "Hello there"
                   (multimethod-without-args :second)))
 
-(println "3."  (= __
+(println "3."  (= 1
                   (multimethod-with-args :path-one {:first-opt 1
                                                     :second-opt 2})))
 
-(println "4."  (= __
+(println "4."  (= 6
                   (multimethod-with-args :path-two {:first-opt 1
                                                     :second-opt [0 1 2]})))
 

@@ -1,0 +1,15 @@
+Juggernaut has extra strength
+Beast has extra strength
+Deadpool has regeneration
+Wolverine has regeneration
+Juggernaut is bulletproof
+Wolverine is bulletproof
+Professor_X has telepathy
+Jean_Grey has telepathy
+Mystique is shape-shifter
+Sand_man is shape-shifter
+Sand_man is bulletproof
+Magneto is bulletproof
+Storm can fly
+Magneto can fly
+Mystique has extra strength
