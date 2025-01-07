@@ -2,7 +2,8 @@
 
 ; https://clojure.org/guides/weird_character
 
-; run it in REPL
+; run all of this in REPL
+
 ; quote
 '(1 3 4)
 
