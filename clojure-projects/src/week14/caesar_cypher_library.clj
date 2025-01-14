@@ -5,16 +5,11 @@
 
 (def alphabet_size (count caesar_data/alphabet))
 
-(def encode_letter_routine
-  (fn [letter_index key]
-    (mod (+ letter_index key) alphabet_size)
-  ))
+(defn encode_letter_routine [letter_index key]
+    (mod (+ letter_index key) alphabet_size))
 
-(def decode_letter_routine
-  (fn [letter_index key]
-    (mod (- letter_index key) alphabet_size)
-    ))
-
+(defn decode_letter_routine [letter_index key]
+    (mod (- letter_index key) alphabet_size))
 
 (defn conversion
   [phrase_to_encode key encoded_word routine]
